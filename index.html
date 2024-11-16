@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RED HAVEN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+</head>
+<body data-scroll-container>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="image/logo.png" alt="RED HAVEN Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" id="authButton" class="auth-nav-button">Login</a></li>
+        </ul>
+    </nav>
+    <div class="auth-modal" id="authModal">
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="signup">Sign Up</button>
+                <button class="close-modal">&times;</button>
+            </div>
+            
+            <div class="auth-content" id="loginForm">
+                <form class="login-form">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit" class="auth-button">Login</button>
+                </form>
+            </div>
+            
+            <div class="auth-content hidden" id="signupForm">
+                <form class="signup-form">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <button type="submit" class="auth-button">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <section id="home" class="hero" data-scroll-section>
+        <div class="hero-content">
+            <h1>RED HAVEN</h1>
+            <p>Welcome to Red Haven, where delicious shawarma, crispy fries, 
+            and refreshing beverages come together in a cozy and welcoming atmosphere.</p>
+            <a href="#menu" class="cta-button">Explore Menu</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section" data-scroll-section>
+        <div class="container">
+            <h2>About RED HAVEN</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="image/about.png" alt="RED HAVEN Interior">
+                </div>
+                <div class="about-text">
+                    <p>Established in 2024, RED HAVEN has been serving premium Food in a warm, inviting atmosphere.</p>
+                    <div class="features">
+                        <div>
+                            <i class="fas fa-coffee"></i>
+                            <h4>Premium Food</h4>
+                        </div>
+                        <div>
+                            <i class="fas fa-utensils"></i>
+                            <h4>Fresh Food</h4>
+                        </div>
+                        <div>
+                            <i class="fas fa-wifi"></i>
+                            <h4>Free WiFi</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section" data-scroll-section>
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 60px;">OUR MENU</h2>
+            <div class="menu-timeline">
+                <!-- Left Side -->
+                <div class="menu-column left">
+                    <div class="menu-item" data-category="coffee">
+                        <div class="menu-content">
+                            <h3>Chicken shawarma half<span class="price">Rs.99</span></h3>
+                        
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-category="food">
+                        <div class="menu-content">
+                            <h3>Chicken shawarma full<span class="price">Rs.149</span></h3>
+                          
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-category="coffee">
+                        <div class="menu-content">
+                            <h3>Chicken shawarma salad <span class="price">Rs.120</span></h3>
+                            
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="desserts">
+                        <div class="menu-content">
+                            <h3>Peanut masala <span class="price">Rs.70</span></h3>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-category="desserts">
+                        <div class="menu-content">
+                            <h3>Mini shawarma singju <span class="price">Rs.150</span></h3>
+                            
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="desserts">
+                        <div class="menu-content">
+                            <h3>Fried Momos <span class="price">Rs.100</span></h3>
+                           
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="desserts">
+                        <div class="menu-content">
+                            <h3>kurkure Momos <span class="price">Rs.120</span></h3>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Center Line -->
+                <div class="center-line"></div>
+                
+                <!-- Right Side -->
+                <div class="menu-column right">
+                    <div class="menu-item" data-category="desserts">
+                        <div class="menu-content">
+                            <h3>Chicken shawarma plater with fries <span class="price">Rs.200</span></h3>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-category="coffee">
+                        <div class="menu-content">
+                            <h3>Grilled cheese sandwich <span class="price">Rs.80</span></h3>
+                           
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-category="food">
+                        <div class="menu-content">
+                            <h3>French fries <span class="price">Rs.80</span></h3>
+                           
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="coffee">
+                        <div class="menu-content">
+                            <h3>Egg and Chicken ball <span class="price">Rs.150</span></h3>
+                           
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-category="coffee">
+                        <div class="menu-content">
+                            <h3>Momos <span class="price">Rs.100</span></h3>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-category="coffee">
+                        <div class="menu-content">
+                            <h3>Doritos chicken shawarma <span class="price">Rs.100</span></h3>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section" data-scroll-section>
+        <div class="container">
+            <h2 style="margin-bottom: 20px;">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Location</h3>
+                        <p>Sangaiprou Mamang leikai, 100 Meter from Imphal College, Airport Road.</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>Hours</h3>
+                        <p>Monday - Sunday: 1PM - 8PM</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>8014889106 / 8837498925</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" data-scroll-section>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="#" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/redhaven22?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Contact us on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <p class="copyright">©2024 RED HAVEN. All rights reserved.</p>
+            <p class="privacy-policy terms-conditions">Privacy Policy | Terms and Conditions</p>
+            <p class ="made-by">Made by Hemba sanasam</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <div id="bg-animation"></div>
+    <script src="background.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="auth.js"></script>
+</body>
+<script src="main.js"></script>
+</html> 
