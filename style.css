@@ -74,7 +74,7 @@ body::after {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(55, 55, 55, 0.71);
+    box-shadow: 0 2px 10px rgba(41, 41, 41, 0.71);
 }
 
 .logo {
@@ -98,7 +98,8 @@ body::after {
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    padding: 0%;
+    gap: 0.1rem;
     list-style: none;
 }
 
