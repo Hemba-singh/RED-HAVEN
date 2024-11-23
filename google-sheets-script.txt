@@ -1,0 +1,31 @@
+// This code needs to be deployed as a Google Apps Script
+function doPost(e) {
+  const lock = LockService.getScriptLock();
+  lock.tryLock(10000);
+  
+  try {
+    const sheet = SpreadsheetApp.getActiveSheet();
+    const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    const nextRow = sheet.getLastRow() + 1;
+    
+    const newRow = headers.map(function(header) {
+      return header === 'Timestamp' ? new Date() : e.parameter[header];
+    });
+    
+    sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow]);
+    
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'error', 'error': error }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  finally {
+    lock.releaseLock();
+  }
+}

@@ -87,9 +87,15 @@ if (contactForm) {
         submitButton.disabled = true;
 
         try {
-            // Here you would typically send the data to your server
-            // For now, we'll simulate a server delay
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            // Send data to Google Sheets
+            const response = await fetch('https://script.google.com/macros/s/AKfycbzPh11MsTW3zaE8T1V1Kq8-JvmtRhAS3E_VyvbiwxTr2LeCCTUuVjaHVMsG0IsAiaW4/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(formData)
+            });
 
             // Show success message
             Swal.fire({
@@ -101,12 +107,11 @@ if (contactForm) {
 
             // Reset form
             contactForm.reset();
-
         } catch (error) {
-            // Show error message
+            console.error('Error:', error);
             Swal.fire({
                 title: 'Error!',
-                text: 'There was a problem sending your message. Please try again.',
+                text: 'Something went wrong. Please try again later.',
                 icon: 'error',
                 confirmButtonColor: '#971108'
             });
@@ -126,4 +131,4 @@ window.addEventListener('scroll', function() {
     } else {
         navbar.style.background = 'rgba(0, 0, 0, 0.8)';
     }
-}); 
+});
